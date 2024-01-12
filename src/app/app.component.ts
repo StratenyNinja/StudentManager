@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Student, StudentComponent } from './student/student.component';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'students';
+  title = 'Student Manager';
 
   // State variables
   loggedIn: boolean = false;
@@ -14,6 +15,22 @@ export class AppComponent {
   // Login variables
   username: string = "";
   password: string = "";
+
+  // Students
+  students: Student[] = [
+    {
+      name: "John",
+      surname: "Doe",
+      dateOfBirth: new Date("1990-01-01"),
+      grade: 1,
+      class: "A",
+      major: 'Science',
+      gender: 'Male',
+      info: 'Good student',
+      disabled: false,
+      lastEdited: new Date()
+    }
+  ]
 
   login() {
     if (this.username == "admin" && this.password == "admin") {

@@ -1,0 +1,20 @@
+<div class="student">
+    <div class="fullName">{{ student.name }} {{ student.surname }}</div>
+    <div class="personalInfo">
+        <h3>Personal Info</h3>
+        <span>Date of Birth: {{ student.dateOfBirth | date:'dd.MM.yyyy' }}</span>
+        <span>Grade: {{ student.grade }}</span>
+        <span>Disabled: {{ student.disabled }}</span>
+    </div>
+    <div class="schoolInfo">
+        <h3>School Info</h3>
+        <span>Grade: {{ student.grade }}</span>
+        <span>Class: {{ student.class }}</span>
+        <span>Major: {{ student.major }}</span>
+    </div>
+    <div class="otherInfo">
+        <h3>Info</h3>
+        <div>{{ student.info }}</div>
+        <div>Last Edited: {{ student.lastEdited | date:'hh:mm dd.MM.yyyy' }}</div>
+    </div>
+</div>
