@@ -4,6 +4,7 @@
   </head>
   <body>
     <nav>
+      <span class="logo">Student Manager</span>
       <button *ngIf="loggedIn" (click)="logout()">Logout</button>
     </nav>
     <form *ngIf="!loggedIn" class="loginForm">

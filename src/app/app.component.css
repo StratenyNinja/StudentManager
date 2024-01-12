@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #EDF2F4;
+    border-radius: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    color: #EDF2F4;
+    background-color: #2B2D42;
+    border-radius: 15px;
+}
+
+nav .logo {
+    font-size: 2em;
+}
+
+nav button {
+    width: 100px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    color: #2B2D42;
+    background-color: #8D99AE;
+    border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+}
+
+nav button:hover {
+    color: #EDF2F4;
+    background-color: #EF233C;
+}
+
+nav button:active {
+    transform: scale(0.95);
+    background-color: #D90429;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+    padding: 25px 0;
+}
+
+.loginForm label {
+    margin-bottom: 0.5em;
+    padding: 0 1em;
+    font-size: 1em;
+    color: #2B2D42;
+}
+
+.loginForm input {
+    margin-bottom: 20px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border: 1px solid #8D99AE;
+    border-radius: 1.5em;
+}
+
+.loginForm button {
+    width: 100px;
+    padding: 0.5em;
+    font-size: 1em;
+    color: #EDF2F4;
+    background-color: #2B2D42;
+    border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+}
+
+.loginForm button:hover {
+    color: #EDF2F4;
+    background-color: #EF233C;
+}
+
+.loginForm button:active {
+    transform: scale(0.95);
+    background-color: #D90429;
+}
