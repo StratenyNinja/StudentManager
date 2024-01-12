@@ -3,7 +3,10 @@
     <title>Student Manager</title>
   </head>
   <body>
-    <form class="loginForm">
+    <nav>
+      <button *ngIf="loggedIn" (click)="logout()">Logout</button>
+    </nav>
+    <form *ngIf="!loggedIn" class="loginForm">
       <label for="username">Username</label>
       <input type="text" id="username" name="username" [(ngModel)]="username">
       <label for="password">Password</label>
