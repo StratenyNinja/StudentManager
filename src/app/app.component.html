@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>Student Manager</title>
+  </head>
+  <body>
+    <form class="loginForm">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password">
+      <button type="submit" (click)="login()">Login</button>
+    </form>
+  </body>
+</html>

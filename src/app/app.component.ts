@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'students';
+
+  // Login variables
+  username: string = "";
+  password: string = "";
+
+  login() {
+    if (this.username == "admin" && this.password == "admin") {
+      alert("Login Successful");
+    } else {
+      alert("Login Failed");
+    }
+  }
 }
