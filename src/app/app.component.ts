@@ -16,6 +16,9 @@ export class AppComponent {
   username: string = "";
   password: string = "";
 
+  // Search variables
+  searchQuery: string = "";
+
   // Students
   students: Student[] = [
     {
@@ -80,5 +83,15 @@ export class AppComponent {
   logout() {
     this.loggedIn = false;
     alert("Logout Successful");
+  }
+
+  search() {
+    if (!this.searchQuery) {
+      return this.students;
+    }
+    return this.students.filter(student => 
+      student.name.toLowerCase().includes(this.searchQuery.toLowerCase()) || 
+      student.surname.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
   }
 }

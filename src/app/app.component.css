@@ -93,6 +93,20 @@ nav button:active {
     justify-content: space-around;
 }
 
+.search {
+    flex-basis: 100%;
+    margin-top: 25px;
+}
+
+.search input {
+    width: 20%;
+    padding: 0.5em 1em;
+    margin-left: calc((100% - 30% * 3) / 6);
+    font-size: 1em;
+    border: 1px solid #8D99AE;
+    border-radius: 1.5em;
+}
+
 .student {
     flex: 1 0 30%;
     max-width: 30%;

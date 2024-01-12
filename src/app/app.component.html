@@ -16,7 +16,10 @@
         <button type="submit" (click)="login()">Login</button>
       </form>
       <div *ngIf="loggedIn" class="students">
-        <div *ngFor="let student of students" class="student">
+        <div class="search">
+          <input type="text" id="search" name="search" placeholder="Search" [(ngModel)]="searchQuery">
+        </div>
+        <div *ngFor="let student of search()" class="student">
           <app-student [student]="student"></app-student>
         </div>
       </div>
