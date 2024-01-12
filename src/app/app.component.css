@@ -6,7 +6,6 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    background-color: #EDF2F4;
     border-radius: 15px;
 }
 
@@ -86,4 +85,20 @@ nav button:active {
 .loginForm button:active {
     transform: scale(0.95);
     background-color: #D90429;
+}
+
+.students {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.student {
+    flex: 1 0 30%;
+    max-width: 30%;
+    margin-top: 25px;
+}
+
+.student:last-child {
+    margin-bottom: 25px;
 }

@@ -29,6 +29,42 @@ export class AppComponent {
       info: 'Good student',
       disabled: false,
       lastEdited: new Date()
+    },
+    {
+      name: "Jane",
+      surname: "Doe",
+      dateOfBirth: new Date("1991-02-02"),
+      grade: 2,
+      class: "B",
+      major: 'Math',
+      gender: 'Female',
+      info: 'Excellent student',
+      disabled: false,
+      lastEdited: new Date()
+    },
+    {
+      name: "Jim",
+      surname: "Beam",
+      dateOfBirth: new Date("1992-03-03"),
+      grade: 3,
+      class: "C",
+      major: 'English',
+      gender: 'Male',
+      info: 'Average student',
+      disabled: false,
+      lastEdited: new Date()
+    },
+    {
+      name: "Jill",
+      surname: "Smith",
+      dateOfBirth: new Date("1993-04-04"),
+      grade: 4,
+      class: "D",
+      major: 'History',
+      gender: 'Female',
+      info: 'Below average student',
+      disabled: false,
+      lastEdited: new Date()
     }
   ]
 

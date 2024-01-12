@@ -1,5 +1,5 @@
 <div class="student">
-    <div class="fullName">{{ student.name }} {{ student.surname }}</div>
+    <h2>{{ student.name }} {{ student.surname }}</h2>
     <div class="personalInfo">
         <h3>Personal Info</h3>
         <span>Date of Birth: {{ student.dateOfBirth | date:'dd.MM.yyyy' }}</span>
@@ -14,7 +14,7 @@
     </div>
     <div class="otherInfo">
         <h3>Info</h3>
-        <div>{{ student.info }}</div>
-        <div>Last Edited: {{ student.lastEdited | date:'hh:mm dd.MM.yyyy' }}</div>
+        <span>{{ student.info }}</span>
     </div>
+    <div class="lastEdited">Last Edited: {{ student.lastEdited | date:'hh:mm dd.MM.yyyy' }}</div>
 </div>
