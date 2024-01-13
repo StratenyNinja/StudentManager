@@ -1,3 +1,7 @@
+main {
+    padding: 25px 0;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -5,6 +9,8 @@ nav {
     color: #EDF2F4;
     background-color: #2B2D42;
     border-radius: 0 0 15px 15px;
+    position: sticky;
+    top: 0;
 }
 
 nav .logo {
@@ -72,7 +78,6 @@ nav button:active {
 
 .search {
     flex-basis: 100%;
-    margin-top: 25px;
 }
 
 .search input {
@@ -88,8 +93,4 @@ nav button:active {
     flex: 1 0 30%;
     max-width: 30%;
     margin-top: 25px;
-}
-
-.student:last-child {
-    margin-bottom: 25px;
 }
