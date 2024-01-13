@@ -1,20 +1,20 @@
 <div class="student" [class.selected]="selected">
     <h2>{{ student.name }} {{ student.surname }}</h2>
-    <div class="personalInfo">
+    <div>
         <h3>Personal Info</h3>
         <span>Date of Birth: {{ student.dateOfBirth ? (student.dateOfBirth | date:'dd.MM.yyyy') : 'None' }}</span>
-        <span>Gender: {{ student.gender !== '' ? student.gender : 'None' | titlecase }}</span>
+        <span>Gender: {{ (student.gender ? student.gender : 'None') | titlecase }}</span>
         <span *ngIf="student.disabled">Disabled</span>
     </div>
-    <div class="schoolInfo">
+    <div>
         <h3>School Info</h3>
-        <span>Major: {{ showMajor() !== '' ? showMajor() : 'None' | titlecase }}</span>
-        <span>Class: {{ student.class !== '' ? student.class : 'None' | titlecase }}</span>
+        <span>Major: {{ (showMajor() ? showMajor() : 'None') | titlecase }}</span>
+        <span>Class: {{ (student.class ? student.class : 'None') | titlecase }}</span>
         <span>Grade: {{ student.grade ? student.grade : 'None' }}</span>
     </div>
-    <div *ngIf="student.info" class="otherInfo">
+    <div *ngIf="student.info">
         <h3>Info</h3>
         <span>{{ student.info }}</span>
     </div>
-    <div class="lastEdited">Last Edited: {{ student.lastEdited | date:'HH:mm dd.MM.yyyy' }}</div>
+    <div class="lastEdited">Last Edited: {{ student.lastEdited | date:'HH:mm:ss dd.MM.yyyy' }}</div>
 </div>
