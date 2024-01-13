@@ -12,14 +12,8 @@ nav .logo {
 }
 
 nav button {
-    width: 100px;
-    padding: 0.5em 1em;
-    font-size: 1em;
     color: #2B2D42;
     background-color: #8D99AE;
-    border: none;
-    border-radius: 1.5em;
-    cursor: pointer;
 }
 
 nav button:hover {
@@ -56,14 +50,8 @@ nav button:active {
 }
 
 .loginForm button {
-    width: 100px;
-    padding: 0.5em;
-    font-size: 1em;
     color: #EDF2F4;
     background-color: #2B2D42;
-    border: none;
-    border-radius: 1.5em;
-    cursor: pointer;
 }
 
 .loginForm button:hover {

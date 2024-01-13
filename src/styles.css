@@ -7,3 +7,12 @@
 html, body {
     font-family: "Roboto", sans-serif;
 }
+
+button {
+    width: 100px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+}
