@@ -3,7 +3,7 @@
     <div class="personalInfo">
         <h3>Personal Info</h3>
         <span>Date of Birth: {{ student.dateOfBirth | date:'dd.MM.yyyy' }}</span>
-        <span>Gender: {{ student.gender }}</span>
+        <span>Gender: {{ student.gender | titlecase }}</span>
         <span>Disabled: {{ student.disabled }}</span>
     </div>
     <div class="schoolInfo">
