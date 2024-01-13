@@ -15,17 +15,13 @@
 
 .student > div {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     padding: 0.5em 1em;
 }
 
 .student h3 {
-    flex-basis: 100%;
     font-size: 1.25em;
-}
-
-.student span {
-    flex-grow: 1;
 }
 
 .lastEdited {

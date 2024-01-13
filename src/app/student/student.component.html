@@ -3,18 +3,18 @@
     <div class="personalInfo">
         <h3>Personal Info</h3>
         <span>Date of Birth: {{ student.dateOfBirth | date:'dd.MM.yyyy' }}</span>
-        <span>Gender: {{ student.gender | titlecase }}</span>
+        <span>Gender: {{ student.gender !== '' ? student.gender : 'None' | titlecase }}</span>
         <span *ngIf="student.disabled">Disabled</span>
     </div>
     <div class="schoolInfo">
         <h3>School Info</h3>
+        <span>Major: {{ showMajor() !== '' ? showMajor() : 'None' | titlecase }}</span>
+        <span>Class: {{ student.class !== '' ? student.class : 'None' | titlecase }}</span>
         <span>Grade: {{ student.grade !== 0 ? student.grade : 'None' }}</span>
-        <span>Class: {{ student.class  | titlecase }}</span>
-        <span>Major: {{ showMajor() | titlecase }}</span>
     </div>
     <div *ngIf="student.info" class="otherInfo">
         <h3>Info</h3>
         <span>{{ student.info }}</span>
     </div>
-    <div class="lastEdited">Last Edited: {{ student.lastEdited | date:'hh:mm dd.MM.yyyy' }}</div>
+    <div class="lastEdited">Last Edited: {{ student.lastEdited | date:'HH:mm dd.MM.yyyy' }}</div>
 </div>
