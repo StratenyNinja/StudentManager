@@ -1,28 +1,21 @@
-<html>
-  <head>
-    <title>Student Manager</title>
-  </head>
-  <body>
-    <nav>
-      <span class="logo">Student Manager</span>
-      <button *ngIf="loggedIn" (click)="logout()">Logout</button>
-    </nav>
-    <main>
-      <form *ngIf="!loggedIn" class="loginForm">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" [(ngModel)]="username">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" [(ngModel)]="password">
-        <button type="submit" (click)="login()">Login</button>
-      </form>
-      <div *ngIf="loggedIn" class="students">
-        <div class="search">
-          <input type="text" id="search" name="search" placeholder="Search" [(ngModel)]="searchQuery">
-        </div>
-        <div *ngFor="let student of search()" class="student">
-          <app-student [student]="student"></app-student>
-        </div>
-      </div>
-    </main>
-  </body>
-</html>
+<nav>
+  <span class="logo">Student Manager</span>
+  <button *ngIf="loggedIn" (click)="logout()">Logout</button>
+</nav>
+<main>
+  <form *ngIf="!loggedIn" class="loginForm">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" [(ngModel)]="username">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" [(ngModel)]="password">
+    <button type="submit" (click)="login()">Login</button>
+  </form>
+  <div *ngIf="loggedIn" class="students">
+    <div class="search">
+      <input type="text" id="search" name="search" placeholder="Search" [(ngModel)]="searchQuery">
+    </div>
+    <div *ngFor="let student of search()" class="student">
+      <app-student [student]="student"></app-student>
+    </div>
+  </div>
+</main>
