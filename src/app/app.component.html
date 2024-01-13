@@ -3,6 +3,7 @@
   <button *ngIf="loggedIn" (click)="logout()">Logout</button>
 </nav>
 <main>
+  <!-- Login Form -->
   <form *ngIf="!loggedIn" class="loginForm">
     <label for="username">Username</label>
     <input type="text" id="username" name="username" [(ngModel)]="username">
@@ -10,21 +11,28 @@
     <input type="password" id="password" name="password" [(ngModel)]="password">
     <button type="submit" (click)="login()">Login</button>
   </form>
+  <!-- Toolbar -->
   <div *ngIf="loggedIn" class="toolbar">
+    <!-- Search -->
     <div class="search">
       <input type="text" id="search" name="search" placeholder="Search" [(ngModel)]="searchQuery">
     </div>
+    <!-- Action Buttons -->
     <div class="actions">
       <button (click)="addStudent()">Add Student</button>
     </div>
+    <!-- Student Form -->
     <form *ngIf="editMode || addMode" class="studentForm">
+      <!-- Name -->
       <div class="fullName">
         <label for="name">Name & Surname</label>
         <input type="text" id="name" name="name" placeholder="Name" [(ngModel)]="studentName">
         <input type="text" id="surname" name="surname" placeholder="Surname" [(ngModel)]="studentSurname">
       </div>
+      <!-- Date of Birth -->
       <label for="dateOfBirth">Date of Birth</label>
       <input type="date" id="dateOfBirth" name="dateOfBirth" [(ngModel)]="studentDateOfBirth">
+      <!-- Gender -->
       <label for="gender">Gender</label>
       <select id="gender" name="gender" [(ngModel)]="studentGender">
         <option value="" disabled selected>Select your gender</option>
@@ -32,21 +40,27 @@
         <option value="female">Female</option>
         <option value="other">Other</option>
       </select>
+      <!-- Disabled -->
       <div class="checkbox">
         <label for="disabled">Disabled</label>
         <input type="checkbox" id="disabled" name="disabled" [(ngModel)]="studentDisabled">
       </div>
+      <!-- Grade -->
       <label for="grade">Grade</label>
       <input type="number" id="grade" name="grade" [(ngModel)]="studentGrade">
+      <!-- Class -->
       <label for="class">Class</label>
       <input type="text" id="class" name="class" [(ngModel)]="studentClass">
+      <!-- Major -->
       <label for="major">Major</label>
       <input type="text" id="major" name="major" [(ngModel)]="studentMajor">
+      <!-- Info -->
       <label for="info">Info</label>
       <textarea id="info" name="info" [(ngModel)]="studentInfo"></textarea>
       <button type="submit" (click)="saveStudent()">Save</button>
     </form>
   </div>
+  <!-- List of Students -->
   <div *ngIf="loggedIn" class="students">
     <div *ngFor="let student of search()" class="student">
       <app-student [student]="student"></app-student>
