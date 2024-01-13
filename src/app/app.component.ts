@@ -110,6 +110,23 @@ export class AppComponent {
     }
   }
 
+  fillForm() {
+    if (this.selectedStudent) {
+      this.studentName = this.selectedStudent.name;
+      this.studentSurname = this.selectedStudent.surname;
+      this.studentDateOfBirth = this.selectedStudent.dateOfBirth;
+      this.studentGrade = this.selectedStudent.grade;
+      this.studentClass = this.selectedStudent.class;
+      this.studentMajor = this.selectedStudent.major;
+      this.studentGender = this.selectedStudent.gender;
+      this.studentInfo = this.selectedStudent.info;
+      this.studentDisabled = this.selectedStudent.disabled;
+      this.studentLastEdited = this.selectedStudent.lastEdited;
+    } else {
+      alert("Error: No student selected.");
+    }
+  }
+
   isStudentInArray(name: string, surname: string): boolean {
     return this.students.some(student => 
       (student.name + " " + student.surname).toLowerCase() === (name + " " + surname).toLowerCase()
@@ -121,7 +138,12 @@ export class AppComponent {
   }
 
   editStudent() {
-    this.editMode = true;
+    if (this.selectedStudent) {
+      this.fillForm();
+      this.editMode = true;
+    } else {
+      alert("Error: No student selected.");
+    }
   }
 
   selectStudent(student: Student) {
@@ -175,6 +197,35 @@ export class AppComponent {
         this.studentLastEdited = new Date();
 
         this.addMode = false;
+      }
+    } else if (this.editMode) {
+      if (this.selectedStudent) {
+        this.selectedStudent.name = this.studentName;
+        this.selectedStudent.surname = this.studentSurname;
+        this.selectedStudent.dateOfBirth = this.studentDateOfBirth;
+        this.selectedStudent.grade = this.studentGrade;
+        this.selectedStudent.class = this.studentClass;
+        this.selectedStudent.major = this.studentMajor;
+        this.selectedStudent.gender = this.studentGender;
+        this.selectedStudent.info = this.studentInfo;
+        this.selectedStudent.disabled = this.studentDisabled;
+        this.selectedStudent.lastEdited = this.studentLastEdited;
+    
+        // Reset form variables
+        this.studentName = "";
+        this.studentSurname = "";
+        this.studentDateOfBirth = null;
+        this.studentGrade = null;
+        this.studentClass = "";
+        this.studentMajor = "";
+        this.studentGender = "";
+        this.studentInfo = "";
+        this.studentDisabled = false;
+        this.studentLastEdited = new Date();
+    
+        this.editMode = false;
+      } else {
+        alert("Error: No student selected.");
       }
     }
   }
