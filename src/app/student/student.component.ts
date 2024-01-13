@@ -31,4 +31,9 @@ export class StudentComponent {
         disabled: false,
         lastEdited: new Date()
     };
+
+    showMajor(): string {
+        // split word by capital letters, then join with space
+        return this.student.major.split(/(?=[A-Z])/).join(' ').toLowerCase();
+    }
 }

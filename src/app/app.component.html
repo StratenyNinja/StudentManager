@@ -59,7 +59,13 @@
       </select>
       <!-- Major -->
       <label for="major">Major</label>
-      <input type="text" id="major" name="major" [(ngModel)]="studentMajor">
+      <select id="major" name="major" [(ngModel)]="studentMajor">
+        <option value="computerScience">Computer Science</option>
+        <option value="math">Math</option>
+        <option value="mechanicalEngineering">Mechanical Engineering</option>
+        <option value="physics">Physics</option>
+        <option value="biology">Biology</option>
+      </select>
       <!-- Info -->
       <label for="info">Info</label>
       <textarea id="info" name="info" [(ngModel)]="studentInfo"></textarea>
