@@ -24,7 +24,7 @@ export class AppComponent {
   // Student Form variables
   studentName: string = "";
   studentSurname: string = "";
-  studentDateOfBirth: Date = new Date();
+  studentDateOfBirth: Date | null = null;
   studentGrade: number | null = null;
   studentClass: string = "";
   studentMajor: string = "";
@@ -135,7 +135,7 @@ export class AppComponent {
         // Reset form variables
         this.studentName = "";
         this.studentSurname = "";
-        this.studentDateOfBirth = new Date();
+        this.studentDateOfBirth = null;
         this.studentGrade = null;
         this.studentClass = "";
         this.studentMajor = "";

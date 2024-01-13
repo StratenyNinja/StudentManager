@@ -2,7 +2,7 @@
     <h2>{{ student.name }} {{ student.surname }}</h2>
     <div class="personalInfo">
         <h3>Personal Info</h3>
-        <span>Date of Birth: {{ student.dateOfBirth | date:'dd.MM.yyyy' }}</span>
+        <span>Date of Birth: {{ student.dateOfBirth ? (student.dateOfBirth | date:'dd.MM.yyyy') : 'None' }}</span>
         <span>Gender: {{ student.gender !== '' ? student.gender : 'None' | titlecase }}</span>
         <span *ngIf="student.disabled">Disabled</span>
     </div>

@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 export interface Student {
     name: string;
     surname: string;
-    dateOfBirth: Date;
+    dateOfBirth: Date | null;
     grade: number;
     class: string;
     major: string;
@@ -22,7 +22,7 @@ export class StudentComponent {
     @Input() student: Student = {
         name: '',
         surname: '',
-        dateOfBirth: new Date(),
+        dateOfBirth: null,
         grade: 0,
         class: '',
         major: '',
