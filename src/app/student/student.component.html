@@ -12,7 +12,7 @@
         <span>Class: {{ student.class }}</span>
         <span>Major: {{ student.major }}</span>
     </div>
-    <div class="otherInfo">
+    <div *ngIf="student.info" class="otherInfo">
         <h3>Info</h3>
         <span>{{ student.info }}</span>
     </div>
