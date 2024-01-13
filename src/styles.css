@@ -5,8 +5,9 @@
 }
 
 html, body {
-    font-family: "Roboto", sans-serif;
     height: 100vh;
+    font-family: "Roboto", sans-serif;
+    color: #2B2D42;
 }
 
 button {

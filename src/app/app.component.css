@@ -22,7 +22,6 @@ nav {
 }
 
 nav button {
-    color: #2B2D42;
     background-color: #8D99AE;
 }
 
@@ -56,7 +55,6 @@ main {
     margin-bottom: 0.5em;
     padding: 0 1em;
     font-size: 1em;
-    color: #2B2D42;
 }
 
 .loginForm input {
