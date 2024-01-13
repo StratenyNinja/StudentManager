@@ -74,15 +74,13 @@ export class AppComponent {
   login() {
     if (this.username == "admin" && this.password == "admin") {
       this.loggedIn = true;
-      alert("Login Successful");
     } else {
-      alert("Login Failed");
+      alert("Login Failed: Invalid username or password.");
     }
   }
 
   logout() {
     this.loggedIn = false;
-    alert("Logout Successful");
   }
 
   search() {
