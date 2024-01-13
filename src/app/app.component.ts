@@ -11,6 +11,8 @@ export class AppComponent {
 
   // State variables
   loggedIn: boolean = false;
+  editMode: boolean = false;
+  addMode: boolean = false;
 
   // Login variables
   username: string = "";
@@ -18,6 +20,18 @@ export class AppComponent {
 
   // Search variables
   searchQuery: string = "";
+
+  // Student Form variables
+  studentName: string = "";
+  studentSurname: string = "";
+  studentDateOfBirth: Date = new Date();
+  studentGrade: number = 1;
+  studentClass: string = "";
+  studentMajor: string = "";
+  studentGender: string = "";
+  studentInfo: string = "";
+  studentDisabled: boolean = false;
+  studentLastEdited: Date = new Date();
 
   // Students
   students: Student[] = [
@@ -90,5 +104,47 @@ export class AppComponent {
     return this.students.filter(student => 
       (student.name + " " + student.surname).toLowerCase().includes(this.searchQuery.toLowerCase())
     );
+  }
+
+  addStudent() {
+    this.addMode = true;
+  }
+
+  saveStudent() {
+    if (this.addMode) {
+      if (!this.studentName || !this.studentSurname) {
+        alert("Error: Name and Surname are required.");
+        return;
+      } else {
+        let newStudent: Student = {
+          name: this.studentName,
+          surname: this.studentSurname,
+          dateOfBirth: this.studentDateOfBirth,
+          grade: this.studentGrade,
+          class: this.studentClass,
+          major: this.studentMajor,
+          gender: this.studentGender,
+          info: this.studentInfo,
+          disabled: this.studentDisabled,
+          lastEdited: this.studentLastEdited
+        };
+
+        this.students.push(newStudent);
+
+        // Reset form variables
+        this.studentName = "";
+        this.studentSurname = "";
+        this.studentDateOfBirth = new Date();
+        this.studentGrade = 1;
+        this.studentClass = "";
+        this.studentMajor = "";
+        this.studentGender = "";
+        this.studentInfo = "";
+        this.studentDisabled = false;
+        this.studentLastEdited = new Date();
+
+        this.addMode = false;
+      }
+    }
   }
 }

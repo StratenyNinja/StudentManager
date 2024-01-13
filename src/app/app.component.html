@@ -14,6 +14,38 @@
     <div class="search">
       <input type="text" id="search" name="search" placeholder="Search" [(ngModel)]="searchQuery">
     </div>
+    <div class="actions">
+      <button (click)="addStudent()">Add Student</button>
+    </div>
+    <form *ngIf="editMode || addMode" class="studentForm">
+      <div class="fullName">
+        <label for="name">Name & Surname</label>
+        <input type="text" id="name" name="name" placeholder="Name" [(ngModel)]="studentName">
+        <input type="text" id="surname" name="surname" placeholder="Surname" [(ngModel)]="studentSurname">
+      </div>
+      <label for="dateOfBirth">Date of Birth</label>
+      <input type="date" id="dateOfBirth" name="dateOfBirth" [(ngModel)]="studentDateOfBirth">
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" [(ngModel)]="studentGender">
+        <option value="default" selected>Select your gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <div class="checkbox">
+        <label for="disabled">Disabled</label>
+        <input type="checkbox" id="disabled" name="disabled" [(ngModel)]="studentDisabled">
+      </div>
+      <label for="grade">Grade</label>
+      <input type="number" id="grade" name="grade" [(ngModel)]="studentGrade">
+      <label for="class">Class</label>
+      <input type="text" id="class" name="class" [(ngModel)]="studentClass">
+      <label for="major">Major</label>
+      <input type="text" id="major" name="major" [(ngModel)]="studentMajor">
+      <label for="info">Info</label>
+      <textarea id="info" name="info" [(ngModel)]="studentInfo"></textarea>
+      <button type="submit" (click)="saveStudent()">Save</button>
+    </form>
   </div>
   <div *ngIf="loggedIn" class="students">
     <div *ngFor="let student of search()" class="student">

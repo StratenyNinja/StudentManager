@@ -88,9 +88,62 @@ main {
 
 .search input {
     width: 100%;
+    margin-bottom: 25px;
+}
+
+.toolbar .actions button {
+    width: 100%;
+    margin-bottom: 15px;
     padding: 0.5em 1em;
     font-size: 1em;
-    border-radius: 1.5em;
+    color: #EDF2F4;
+    background-color: #2B2D42;
+}
+
+.toolbar .actions button:last-child {
+    margin-bottom: 25px;
+}
+
+.toolbar .actions button:hover {
+    color: #EDF2F4;
+    background-color: #EF233C;
+}
+
+.toolbar .actions button:active {
+    transform: scale(0.95);
+    background-color: #D90429;
+}
+
+/* Student Form */
+.toolbar .studentForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.toolbar .studentForm input,
+.toolbar .studentForm select,
+.toolbar .studentForm textarea {
+    margin: 5px 0 10px 0;
+}
+
+.toolbar .studentForm .fullName {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.toolbar .studentForm .fullName label {
+    width: 100%;
+}
+
+.toolbar .studentForm .fullName input {
+    width: 48%;
+}
+
+.toolbar .studentForm .checkbox {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1rem;
 }
 
 /* Students */
