@@ -4,7 +4,7 @@
         <h3>Personal Info</h3>
         <span>Date of Birth: {{ student.dateOfBirth | date:'dd.MM.yyyy' }}</span>
         <span>Gender: {{ student.gender | titlecase }}</span>
-        <span>Disabled: {{ student.disabled }}</span>
+        <span *ngIf="student.disabled">Disabled</span>
     </div>
     <div class="schoolInfo">
         <h3>School Info</h3>
