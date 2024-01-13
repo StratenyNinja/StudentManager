@@ -8,7 +8,7 @@
     </div>
     <div class="schoolInfo">
         <h3>School Info</h3>
-        <span>Grade: {{ student.grade }}</span>
+        <span>Grade: {{ student.grade !== 0 ? student.grade : 'None' }}</span>
         <span>Class: {{ student.class  | titlecase }}</span>
         <span>Major: {{ showMajor() | titlecase }}</span>
     </div>

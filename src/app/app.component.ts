@@ -25,7 +25,7 @@ export class AppComponent {
   studentName: string = "";
   studentSurname: string = "";
   studentDateOfBirth: Date = new Date();
-  studentGrade: number = 1;
+  studentGrade: number | null = null;
   studentClass: string = "";
   studentMajor: string = "";
   studentGender: string = "";
@@ -121,7 +121,7 @@ export class AppComponent {
           name: this.studentName,
           surname: this.studentSurname,
           dateOfBirth: this.studentDateOfBirth,
-          grade: this.studentGrade,
+          grade: this.studentGrade || 0,
           class: this.studentClass,
           major: this.studentMajor,
           gender: this.studentGender,
@@ -136,7 +136,7 @@ export class AppComponent {
         this.studentName = "";
         this.studentSurname = "";
         this.studentDateOfBirth = new Date();
-        this.studentGrade = 1;
+        this.studentGrade = null;
         this.studentClass = "";
         this.studentMajor = "";
         this.studentGender = "";
