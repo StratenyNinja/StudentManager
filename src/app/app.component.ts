@@ -33,6 +33,9 @@ export class AppComponent {
   studentDisabled: boolean = false;
   studentLastEdited: Date = new Date();
 
+  // Student Select variables
+  selectedStudent: Student | null = null;
+
   // Students
   students: Student[] = [
     {
@@ -121,7 +124,9 @@ export class AppComponent {
     this.editMode = true;
   }
 
-
+  selectStudent(student: Student) {
+    this.selectedStudent = student;
+  }
 
   saveStudent() {
     if (this.addMode) {

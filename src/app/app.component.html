@@ -74,8 +74,11 @@
   </div>
   <!-- List of Students -->
   <div *ngIf="loggedIn" class="students">
-    <div *ngFor="let student of search()" class="student">
-      <app-student [student]="student"></app-student>
-    </div>
+      <div *ngFor="let student of search()" 
+           class="student" 
+           [class.selected]="student === selectedStudent" 
+           (click)="selectStudent(student)">
+        <app-student [student]="student" [selected]="student === selectedStudent"></app-student>
+      </div>
   </div>
 </main>

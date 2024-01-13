@@ -27,3 +27,7 @@
 .lastEdited {
     color: #8D99AE;
 }
+
+.selected h2 {
+    background-color: #EF233C;
+}

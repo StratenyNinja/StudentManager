@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export interface Student {
     name: string;
@@ -31,9 +31,15 @@ export class StudentComponent {
         disabled: false,
         lastEdited: new Date()
     };
+    @Input() selected: boolean = false;
+    @Output() select = new EventEmitter<Student>();
 
     showMajor(): string {
         // split word by capital letters, then join with space
         return this.student.major.split(/(?=[A-Z])/).join(' ').toLowerCase();
+    }
+
+    onClick() {
+        this.select.emit(this.student);
     }
 }
