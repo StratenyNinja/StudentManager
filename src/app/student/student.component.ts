@@ -4,7 +4,7 @@ export interface Student {
     name: string;
     surname: string;
     dateOfBirth: Date | null;
-    grade: number;
+    grade: number | null;
     class: string;
     major: string;
     gender: string;
@@ -23,7 +23,7 @@ export class StudentComponent {
         name: '',
         surname: '',
         dateOfBirth: null,
-        grade: 0,
+        grade: null,
         class: '',
         major: '',
         gender: '',

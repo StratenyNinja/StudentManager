@@ -10,7 +10,7 @@
         <h3>School Info</h3>
         <span>Major: {{ showMajor() !== '' ? showMajor() : 'None' | titlecase }}</span>
         <span>Class: {{ student.class !== '' ? student.class : 'None' | titlecase }}</span>
-        <span>Grade: {{ student.grade !== 0 ? student.grade : 'None' }}</span>
+        <span>Grade: {{ student.grade ? student.grade : 'None' }}</span>
     </div>
     <div *ngIf="student.info" class="otherInfo">
         <h3>Info</h3>

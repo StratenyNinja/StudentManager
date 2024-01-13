@@ -121,7 +121,7 @@ export class AppComponent {
           name: this.studentName,
           surname: this.studentSurname,
           dateOfBirth: this.studentDateOfBirth,
-          grade: this.studentGrade || 0,
+          grade: this.studentGrade,
           class: this.studentClass,
           major: this.studentMajor,
           gender: this.studentGender,
