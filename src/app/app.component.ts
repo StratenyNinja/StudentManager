@@ -107,9 +107,21 @@ export class AppComponent {
     }
   }
 
+  isStudentInArray(name: string, surname: string): boolean {
+    return this.students.some(student => 
+      (student.name + " " + student.surname).toLowerCase() === (name + " " + surname).toLowerCase()
+    );
+  }
+
   addStudent() {
     this.addMode = true;
   }
+
+  editStudent() {
+    this.editMode = true;
+  }
+
+
 
   saveStudent() {
     if (this.addMode) {
@@ -117,6 +129,10 @@ export class AppComponent {
         alert("Error: Name and Surname are required.");
         return;
       } else {
+        if (this.isStudentInArray(this.studentName, this.studentSurname)) {
+          alert("Error: Student already exists.");
+          return;
+        }
         let newStudent: Student = {
           name: this.studentName,
           surname: this.studentSurname,
