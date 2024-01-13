@@ -14,7 +14,7 @@ export class AppComponent {
   editMode: boolean = false;
   addMode: boolean = false;
 
-  // Login variables
+  // Login Form variables
   username: string = "";
   password: string = "";
 
