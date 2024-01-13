@@ -9,7 +9,7 @@
     <div class="schoolInfo">
         <h3>School Info</h3>
         <span>Grade: {{ student.grade }}</span>
-        <span>Class: {{ student.class }}</span>
+        <span>Class: {{ student.class  | titlecase }}</span>
         <span>Major: {{ student.major }}</span>
     </div>
     <div *ngIf="student.info" class="otherInfo">
