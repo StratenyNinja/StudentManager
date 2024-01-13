@@ -128,6 +128,15 @@ export class AppComponent {
     this.selectedStudent = student;
   }
 
+  deleteStudent() {
+    if (this.selectedStudent) {
+      this.students = this.students.filter(student => student !== this.selectedStudent);
+      this.selectedStudent = null;
+    } else {
+      alert("Error: No student selected.");
+    }
+  }
+
   saveStudent() {
     if (this.addMode) {
       if (!this.studentName || !this.studentSurname) {
