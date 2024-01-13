@@ -98,12 +98,13 @@ export class AppComponent {
   }
 
   search() {
-    if (!this.searchQuery) {
+    if (this.searchQuery) {
+      return this.students.filter(student => 
+        (student.name + " " + student.surname).toLowerCase().includes(this.searchQuery.toLowerCase())
+      );
+    } else {
       return this.students;
     }
-    return this.students.filter(student => 
-      (student.name + " " + student.surname).toLowerCase().includes(this.searchQuery.toLowerCase())
-    );
   }
 
   addStudent() {
