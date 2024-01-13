@@ -90,8 +90,7 @@ export class AppComponent {
       return this.students;
     }
     return this.students.filter(student => 
-      student.name.toLowerCase().includes(this.searchQuery.toLowerCase()) || 
-      student.surname.toLowerCase().includes(this.searchQuery.toLowerCase())
+      (student.name + " " + student.surname).toLowerCase().includes(this.searchQuery.toLowerCase())
     );
   }
 }
