@@ -30,8 +30,18 @@ export class AppComponent {
     this.loggedIn = false;
   }
 
-  // Search variables
+  // Search Bar
   searchQuery: string = "";
+
+  search() {
+    if (this.searchQuery) {
+      return this.students.filter(student => 
+        (student.name + " " + student.surname).toLowerCase().includes(this.searchQuery.toLowerCase())
+      );
+    } else {
+      return this.students;
+    }
+  }
 
   // Student Form variables
   studentName: string = "";
@@ -99,16 +109,6 @@ export class AppComponent {
       lastEdited: new Date()
     }
   ]
-
-  search() {
-    if (this.searchQuery) {
-      return this.students.filter(student => 
-        (student.name + " " + student.surname).toLowerCase().includes(this.searchQuery.toLowerCase())
-      );
-    } else {
-      return this.students;
-    }
-  }
 
   fillForm() {
     if (this.selectedStudent) {
