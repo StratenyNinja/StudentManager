@@ -43,6 +43,17 @@ export class AppComponent {
     }
   }
 
+  // Student Selection
+  selectedStudent: Student | null = null;
+
+  selectStudent(student: Student) {
+    if (this.selectedStudent === student) {
+      this.selectedStudent = null;
+    } else {
+      this.selectedStudent = student;
+    }
+  }
+
   // Student Form variables
   studentName: string = "";
   studentSurname: string = "";
@@ -54,9 +65,6 @@ export class AppComponent {
   studentInfo: string = "";
   studentDisabled: boolean = false;
   studentLastEdited: Date = new Date();
-
-  // Student Select variables
-  selectedStudent: Student | null = null;
 
   // Students
   students: Student[] = [
@@ -144,10 +152,6 @@ export class AppComponent {
     } else {
       alert("Error: No student selected.");
     }
-  }
-
-  selectStudent(student: Student) {
-    this.selectedStudent = student;
   }
 
   deleteStudent() {
