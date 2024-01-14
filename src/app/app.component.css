@@ -22,6 +22,7 @@ nav {
 }
 
 nav button {
+    border-color: #2B2D42;
     background-color: #8D99AE;
 }
 
@@ -51,21 +52,11 @@ main {
     padding: 25px 0;
 }
 
-.loginForm label {
-    margin-bottom: 0.5em;
-}
-
 .loginForm input {
-    margin-bottom: 20px;
-}
-
-.loginForm button {
-    color: #EDF2F4;
-    background-color: #2B2D42;
+    margin: 5px 0 20px 0;
 }
 
 .loginForm button:hover {
-    color: #EDF2F4;
     background-color: #EF233C;
 }
 
@@ -91,13 +82,13 @@ main {
     margin-bottom: 25px;
 }
 
-.toolbar .actions button {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 0.5em 1em;
-    font-size: 1em;
-    color: #EDF2F4;
-    background-color: #2B2D42;
+.toolbar .actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.toolbar .actions button {  
+    margin-bottom: 10px;
 }
 
 .toolbar .actions button:last-child {
@@ -105,7 +96,6 @@ main {
 }
 
 .toolbar .actions button:hover {
-    color: #EDF2F4;
     background-color: #EF233C;
 }
 
@@ -148,16 +138,20 @@ main {
 
 /* Students */
 .students {
-    padding: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 75%;
     overflow-y: scroll;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 75%;
+    padding: 25px;
 }
 
 .student {
     flex: 1 0 30%;
     max-width: 30%;
-    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.student:last-child {
+    margin-bottom: 0;
 }
