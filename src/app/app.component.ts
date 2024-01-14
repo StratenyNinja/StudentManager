@@ -64,7 +64,6 @@ export class AppComponent {
   studentGender: string = "";
   studentInfo: string = "";
   studentDisabled: boolean = false;
-  studentLastEdited: Date = new Date();
 
   // Students
   students: Student[] = [
@@ -78,7 +77,7 @@ export class AppComponent {
       gender: 'male',
       info: 'Good student',
       disabled: false,
-      lastEdited: new Date()
+      lastEdited: null
     },
     {
       name: "Jane",
@@ -90,7 +89,7 @@ export class AppComponent {
       gender: 'female',
       info: 'Excellent student',
       disabled: true,
-      lastEdited: new Date()
+      lastEdited: null
     },
     {
       name: "Jim",
@@ -102,7 +101,7 @@ export class AppComponent {
       gender: 'male',
       info: 'Average student',
       disabled: false,
-      lastEdited: new Date()
+      lastEdited: null
     },
     {
       name: "Jill",
@@ -114,7 +113,7 @@ export class AppComponent {
       gender: 'female',
       info: 'Below average student',
       disabled: true,
-      lastEdited: new Date()
+      lastEdited: null
     }
   ]
 
@@ -129,7 +128,6 @@ export class AppComponent {
       this.studentGender = this.selectedStudent.gender;
       this.studentInfo = this.selectedStudent.info;
       this.studentDisabled = this.selectedStudent.disabled;
-      this.studentLastEdited = this.selectedStudent.lastEdited;
     } else {
       alert("Error: No student selected.");
     }
@@ -183,7 +181,7 @@ export class AppComponent {
           gender: this.studentGender,
           info: this.studentInfo,
           disabled: this.studentDisabled,
-          lastEdited: this.studentLastEdited
+          lastEdited: null
         };
 
         this.students.push(newStudent);
@@ -198,7 +196,6 @@ export class AppComponent {
         this.studentGender = "";
         this.studentInfo = "";
         this.studentDisabled = false;
-        this.studentLastEdited = new Date();
 
         this.addMode = false;
       }
@@ -213,7 +210,7 @@ export class AppComponent {
         this.selectedStudent.gender = this.studentGender;
         this.selectedStudent.info = this.studentInfo;
         this.selectedStudent.disabled = this.studentDisabled;
-        this.selectedStudent.lastEdited = this.studentLastEdited;
+        this.selectedStudent.lastEdited = new Date();
     
         // Reset form variables
         this.studentName = "";
@@ -225,7 +222,6 @@ export class AppComponent {
         this.studentGender = "";
         this.studentInfo = "";
         this.studentDisabled = false;
-        this.studentLastEdited = new Date();
     
         this.editMode = false;
       } else {

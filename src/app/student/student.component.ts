@@ -10,7 +10,7 @@ export interface Student {
     gender: string;
     info: string;
     disabled: boolean;
-    lastEdited: Date;
+    lastEdited: Date | null;
 }
 
 @Component({
@@ -29,7 +29,7 @@ export class StudentComponent {
         gender: '',
         info: '',
         disabled: false,
-        lastEdited: new Date()
+        lastEdited: null
     };
     @Input() selected: boolean = false;
     @Output() select = new EventEmitter<Student>();

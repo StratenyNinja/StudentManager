@@ -16,5 +16,5 @@
         <h3>Info</h3>
         <span>{{ student.info }}</span>
     </div>
-    <div class="lastEdited">Last Edited: {{ student.lastEdited | date:'HH:mm:ss dd.MM.yyyy' }}</div>
+    <div *ngIf="student.lastEdited" class="lastEdited">Last Edited: {{ student.lastEdited | date:'HH:mm:ss dd.MM.yyyy' }}</div>
 </div>
