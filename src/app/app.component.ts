@@ -14,9 +14,21 @@ export class AppComponent {
   editMode: boolean = false;
   addMode: boolean = false;
 
-  // Login Form variables
+  // Login Form
   username: string = "";
   password: string = "";
+
+  login() {
+    if (this.username == "admin" && this.password == "admin") {
+      this.loggedIn = true;
+    } else {
+      alert("Error: Invalid username or password.");
+    }
+  }
+
+  logout() {
+    this.loggedIn = false;
+  }
 
   // Search variables
   searchQuery: string = "";
@@ -87,18 +99,6 @@ export class AppComponent {
       lastEdited: new Date()
     }
   ]
-
-  login() {
-    if (this.username == "admin" && this.password == "admin") {
-      this.loggedIn = true;
-    } else {
-      alert("Login Failed: Invalid username or password.");
-    }
-  }
-
-  logout() {
-    this.loggedIn = false;
-  }
 
   search() {
     if (this.searchQuery) {
