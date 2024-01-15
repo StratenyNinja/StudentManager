@@ -28,6 +28,8 @@ export class AppComponent {
 
   logout() {
     this.loggedIn = false;
+    this.username = "";
+    this.password = "";
   }
 
   // Search Bar
